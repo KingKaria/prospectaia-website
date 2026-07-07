@@ -160,6 +160,49 @@ section{ padding: 80px 0; }
 .nav-menu a:hover{ color: var(--accent); }
 .nav-menu a:focus-visible{ outline: 2px solid var(--accent); outline-offset:4px; }
 
+/* ---------- Nav dropdown: Setores ---------- */
+.nav-dropdown{ position:relative; }
+.nav-dropdown summary{
+  cursor:pointer;
+  color: var(--white);
+  font-weight:500;
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:4px;
+  transition: color var(--transition);
+}
+.nav-dropdown summary::-webkit-details-marker{ display:none; }
+.nav-dropdown summary::after{ content:'▾'; font-size:0.7em; }
+.nav-dropdown:hover summary,
+.nav-dropdown[open] summary{ color: var(--accent); }
+
+.nav-dropdown-menu{
+  position:absolute;
+  top: calc(100% + 14px);
+  left:0;
+  background: var(--dark);
+  border-radius: 12px;
+  padding: 10px;
+  min-width: 220px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+  display:flex;
+  flex-direction:column;
+  gap: 2px;
+  z-index: 1001;
+}
+.nav-dropdown-menu a{
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--white);
+  font-weight:500;
+  white-space:nowrap;
+}
+.nav-dropdown-menu a:hover{
+  background: rgba(255,255,255,0.08);
+  color: var(--accent);
+}
+
 .hamburger{
   display:none;
   flex-direction:column;
@@ -256,6 +299,20 @@ section{ padding: 80px 0; }
   color: var(--primary);
 }
 .stat-card p{ color:#7a7f85; margin-top:8px; }
+
+a.service-card,
+a.why-card{
+  display:block;
+  color: inherit;
+  text-decoration:none;
+}
+.card-link-hint{
+  display:inline-block;
+  margin-top:14px;
+  font-weight:600;
+  color: var(--primary);
+}
+a.why-card .card-link-hint{ color: var(--accent); }
 
 /* =========================================================
    WHY SECTION
@@ -475,6 +532,12 @@ section{ padding: 80px 0; }
 .blog-content h3{ margin: 10px 0; font-size:1.15em; }
 .blog-content p{ color:#666; margin-bottom:14px; }
 
+.section-link-center{
+  text-align:center;
+  margin-top: -30px;
+  margin-bottom: 40px;
+}
+
 /* =========================================================
    FINAL STATS
    ========================================================= */
@@ -565,6 +628,7 @@ section{ padding: 80px 0; }
     top:0; right:-100%;
     width: 70%;
     height:100vh;
+    overflow-y:auto;
     background: var(--dark);
     flex-direction:column;
     justify-content:flex-start;
@@ -577,6 +641,15 @@ section{ padding: 80px 0; }
   .hamburger{ display:flex; }
   .btn-cta{ display:none; }
 
+  .nav-dropdown{ width:100%; }
+  .nav-dropdown-menu{
+    position:static;
+    box-shadow:none;
+    background: rgba(255,255,255,0.05);
+    margin-top: 10px;
+    width:100%;
+  }
+
   .hero{ padding: 130px 0 60px; }
   .hero-text h1{ font-size: 2em; }
   .hero-stats{ flex-wrap:wrap; gap:20px; }
@@ -587,4 +660,23 @@ section{ padding: 80px 0; }
   .stats-grid{ grid-template-columns: 1fr; }
   .final-stats-grid{ grid-template-columns: 1fr; }
   .footer-grid{ grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   ARTICLE CALLOUTS
+   ========================================================= */
+.article-callout{
+  background: rgba(102,126,234,0.06);
+  border-left: 4px solid var(--primary);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 24px 0;
+}
+.article-callout p{ margin-bottom:0; color:#333; }
+.article-example{
+  font-style: italic;
+  color:#666;
+  border-left: 3px solid #ddd;
+  padding-left: 16px;
+  margin: 14px 0 22px;
 }
