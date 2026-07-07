@@ -56,6 +56,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 {footer}
 
 <script src="js/script.js"></script>
+<script data-goatcounter="https://prospectaia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 """
