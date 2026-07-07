@@ -315,6 +315,40 @@ a.why-card{
 a.why-card .card-link-hint{ color: var(--accent); }
 
 /* =========================================================
+   PLATFORMS
+   ========================================================= */
+.platforms-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap: 16px;
+}
+.platform-badge{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  background: var(--white);
+  border: 1px solid #eee;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-weight:600;
+  color: var(--text);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.platform-badge:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(102,126,234,0.15);
+  border-color: var(--primary);
+}
+.platform-icon{ font-size:1.3em; }
+.platform-badge-more{
+  background: rgba(102,126,234,0.06);
+  color: var(--primary);
+  border-color: rgba(102,126,234,0.3);
+}
+
+/* =========================================================
    WHY SECTION
    ========================================================= */
 .why-section{
