@@ -409,42 +409,6 @@ a.why-card .card-link-hint{ color: var(--accent); }
 .link-more:hover{ color: var(--secondary); }
 
 /* =========================================================
-   CASE STUDIES
-   ========================================================= */
-.cases-grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-.case-card{
-  background: var(--white);
-  border-radius: 14px;
-  overflow:hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-.case-card:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-}
-.case-card img{ height: 200px; width:100%; object-fit:cover; }
-.case-content{ padding: 24px; }
-.case-content h3{ margin-bottom:12px; }
-.case-metrics{ display:flex; gap:12px; margin-bottom:14px; flex-wrap:wrap; }
-.metric{
-  background: rgba(102,126,234,0.1);
-  color: var(--primary);
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size:0.85em;
-  font-weight:600;
-}
-.testimonial{
-  font-style: italic;
-  color:#666;
-}
-
-/* =========================================================
    PRICING
    ========================================================= */
 .pricing-grid{
@@ -648,7 +612,6 @@ a.why-card .card-link-hint{ color: var(--accent); }
   .stats-grid{ grid-template-columns: repeat(2, 1fr); }
   .why-grid{ grid-template-columns: 1fr; }
   .services-grid{ grid-template-columns: 1fr; }
-  .cases-grid{ grid-template-columns: 1fr; }
   .pricing-grid{ grid-template-columns: 1fr; }
   .pricing-card.featured{ transform: none; }
   .blog-grid{ grid-template-columns: 1fr; }
@@ -713,4 +676,38 @@ a.why-card .card-link-hint{ color: var(--accent); }
   border-left: 3px solid #ddd;
   padding-left: 16px;
   margin: 14px 0 22px;
+}
+
+/* =========================================================
+   WHATSAPP FLOATING BUTTON
+   ========================================================= */
+.whatsapp-float{
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  z-index: 1200;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.whatsapp-float:hover{
+  transform: scale(1.08);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.3);
+}
+.whatsapp-icon{ font-size: 1.8em; line-height:1; }
+
+@media (max-width: 480px){
+  .whatsapp-float{
+    width: 52px;
+    height: 52px;
+    right: 16px;
+    bottom: 16px;
+  }
+  .whatsapp-icon{ font-size: 1.5em; }
 }
