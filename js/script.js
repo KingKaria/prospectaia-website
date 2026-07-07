@@ -82,3 +82,43 @@ const countObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 
 counters.forEach(el => countObserver.observe(el));
+
+// ============ CONTACT FORM (Web3Forms) ============
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  const statusEl = document.getElementById('formStatus');
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    statusEl.className = 'form-status';
+    statusEl.textContent = '';
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'A enviar...';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(contactForm),
+      });
+      const result = await response.json();
+
+      if (response.status === 200 && result.success) {
+        statusEl.className = 'form-status success';
+        statusEl.textContent = 'Mensagem enviada com sucesso! Entraremos em contacto em breve.';
+        contactForm.reset();
+      } else {
+        throw new Error(result.message || 'Falha no envio');
+      }
+    } catch (err) {
+      statusEl.className = 'form-status error';
+      statusEl.textContent = 'Não foi possível enviar a mensagem. Tente novamente ou use o WhatsApp acima.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    }
+  });
+}

@@ -572,6 +572,15 @@ a.why-card .card-link-hint{ color: var(--accent); }
    FAQ
    ========================================================= */
 .faq-list{ max-width: 800px; margin: 0 auto; }
+.faq-category{
+  font-size: 1.05em;
+  font-weight: 700;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 44px 0 4px;
+}
+.faq-category:first-child{ margin-top: 0; }
 .faq-item{
   border-bottom: 1px solid #ddd;
 }

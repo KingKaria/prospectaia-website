@@ -101,6 +101,15 @@
     margin-top:-8px;
     margin-bottom:20px;
   }
+  .form-status{
+    display:none;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight:600;
+  }
+  .form-status.success{ display:block; background: rgba(37,211,102,0.12); color:#1a8a4a; }
+  .form-status.error{ display:block; background: rgba(220,53,69,0.1); color:#c0392b; }
 
   @media (max-width: 768px){
     .contact-grid{ grid-template-columns: 1fr; }
@@ -159,9 +168,16 @@
         <p>Segunda a Sexta, 9h00 – 18h00</p>
       </div>
 
-      <form class="contact-form fade-in" action="mailto:contacto@prospectaia.pt" method="post" enctype="text/plain">
+      <form class="contact-form fade-in" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
         <h3 style="margin-bottom:8px;">Ou Envie uma Mensagem</h3>
-        <p class="form-note">Este formulário abre o seu programa de email para enviar a mensagem. Se preferir uma resposta mais rápida, use o WhatsApp acima.</p>
+        <p class="form-note">A sua mensagem é enviada diretamente para a nossa equipa. Se preferir uma resposta mais rápida, use o WhatsApp acima.</p>
+
+        <input type="hidden" name="access_key" value="2ae29ecb-f421-46b8-a092-24e6e1095efa">
+        <input type="hidden" name="subject" value="Novo pedido de análise — ProspectaIA">
+        <input type="hidden" name="from_name" value="Formulário ProspectaIA">
+        <input type="checkbox" name="botcheck" style="display:none">
+
+        <div class="form-status" id="formStatus"></div>
 
         <label for="name">Nome</label>
         <input type="text" id="name" name="Nome" required>
