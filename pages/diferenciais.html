@@ -11,12 +11,13 @@
   .profession-table{ display:grid; grid-template-columns: repeat(2, 1fr); gap:20px; margin-top:30px; }
   .profession-item{
     background: var(--white);
-    border-radius: 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
     padding: 22px 26px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    box-shadow: var(--shadow-sm);
   }
   .profession-item h4{ color: var(--primary); margin-bottom:8px; }
-  .profession-item p{ color:#555; }
+  .profession-item p{ color:var(--text-muted); }
   @media (max-width: 768px){ .profession-table{ grid-template-columns: 1fr; } }
 </style>
 <!--BODY-->
@@ -34,7 +35,7 @@
 
 <section class="services-section pillar-section" id="estrategia">
   <div class="container">
-    <h2 class="section-title">🎯 Estratégia Personalizada</h2>
+    <h2 class="section-title">Estratégia Personalizada</h2>
     <p class="section-subtitle">Cada plano é adaptado ao perfil, setor e objetivos específicos do negócio</p>
     <div class="profession-table">
       <div class="profession-item fade-in"><h4>Restaurantes</h4><p>Estratégia focada em horários de maior procura e ocupação de mesas.</p></div>
@@ -51,7 +52,7 @@
 
 <section class="why-section pillar-section" id="acompanhamento">
   <div class="container">
-    <h2 class="section-title light">🤝 Acompanhamento Contínuo</h2>
+    <h2 class="section-title light">Acompanhamento Contínuo</h2>
     <p class="section-subtitle light">Equipa dedicada que monitoriza resultados e ajusta a estratégia mensalmente</p>
     <div class="profession-table">
       <div class="profession-item fade-in"><h4>Restaurantes</h4><p>Ajustes mensais conforme sazonalidade, eventos e novos pratos ou promoções.</p></div>
@@ -68,7 +69,7 @@
 
 <section class="services-section pillar-section" id="resultados">
   <div class="container">
-    <h2 class="section-title">💡 Foco em Resultados Mensuráveis</h2>
+    <h2 class="section-title">Foco em Resultados Mensuráveis</h2>
     <p class="section-subtitle">Cada plano é orientado por métricas concretas, acompanhadas de perto mês a mês</p>
     <div class="profession-table">
       <div class="profession-item fade-in"><h4>Restaurantes</h4><p>Aumento médio de reservas e redução de mesas vazias em horários de menor procura.</p></div>
