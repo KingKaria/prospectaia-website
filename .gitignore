@@ -3,3 +3,7 @@
 # CI (.github/workflows/deploy.yml) builds and deploys fresh on every push.
 /*.html
 /sitemap.xml
+
+# Google Search Console domain ownership verification file — not generated,
+# must be tracked and deployed as-is despite the /*.html ignore rule above.
+!/google196233e0d8837911.html
