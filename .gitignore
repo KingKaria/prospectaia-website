@@ -2,3 +2,4 @@
 # Run `python build.py` locally to regenerate these for preview.
 # CI (.github/workflows/deploy.yml) builds and deploys fresh on every push.
 /*.html
+/sitemap.xml
