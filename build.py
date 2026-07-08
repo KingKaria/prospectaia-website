@@ -48,7 +48,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 
 <header class="navbar" id="navbar">
   <div class="container navbar-inner">
-    <a href="index.html" class="logo"><span class="logo-mark">P</span>Prospecta<span>IA</span></a>
+    <a href="/" class="logo"><span class="logo-mark">P</span>Prospecta<span>IA</span></a>
 
     {nav}
     <a href="contacto.html" class="btn btn-cta">Iniciar Conversa</a>
