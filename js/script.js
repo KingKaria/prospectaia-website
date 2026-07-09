@@ -1,8 +1,11 @@
 // ============ GOOGLE ADS CONVERSION ============
 const ADS_CONVERSION_SEND_TO = 'AW-18214310940/6jAFCPrZ6M0cEJyooe1D';
 
-function trackAdsConversion() {
+function trackAdsConversion(userData) {
   if (typeof gtag === 'function') {
+    if (userData && (userData.email || userData.phone_number)) {
+      gtag('set', 'user_data', userData);
+    }
     gtag('event', 'conversion', {
       'send_to': ADS_CONVERSION_SEND_TO,
       'value': 10.0,
@@ -105,6 +108,9 @@ if (contactForm) {
   contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
+    const submittedEmail = document.getElementById('email').value;
+    const submittedPhone = document.getElementById('phone').value;
+
     statusEl.className = 'form-status';
     statusEl.textContent = '';
     const originalBtnText = submitBtn.textContent;
@@ -126,7 +132,10 @@ if (contactForm) {
         if (typeof gtag === 'function') {
           gtag('event', 'generate_lead', { form_id: 'contactForm' });
         }
-        trackAdsConversion();
+        trackAdsConversion({
+          email: submittedEmail,
+          phone_number: submittedPhone
+        });
       } else {
         throw new Error(result.message || 'Falha no envio');
       }
