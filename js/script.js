@@ -1,3 +1,16 @@
+// ============ GOOGLE ADS CONVERSION ============
+const ADS_CONVERSION_SEND_TO = 'AW-18214310940/6jAFCPrZ6M0cEJyooe1D';
+
+function trackAdsConversion() {
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      'send_to': ADS_CONVERSION_SEND_TO,
+      'value': 10.0,
+      'currency': 'EUR'
+    });
+  }
+}
+
 // ============ NAVBAR: shadow/blur ao scroll ============
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -113,6 +126,7 @@ if (contactForm) {
         if (typeof gtag === 'function') {
           gtag('event', 'generate_lead', { form_id: 'contactForm' });
         }
+        trackAdsConversion();
       } else {
         throw new Error(result.message || 'Falha no envio');
       }
@@ -132,5 +146,6 @@ document.querySelectorAll('a[href^="https://wa.me/"]').forEach(link => {
     if (typeof gtag === 'function') {
       gtag('event', 'contact_whatsapp');
     }
+    trackAdsConversion();
   });
 });
