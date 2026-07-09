@@ -33,6 +33,11 @@ FAVICON = (
     "</svg>"
 )
 
+GA_MEASUREMENT_ID = "G-E9PZLXPZZC"
+# Google Ads conversion ID (format "AW-XXXXXXXXX"). Leave empty until the
+# account exists; consent.js and gtag calls skip it automatically when blank.
+GOOGLE_ADS_ID = ""
+
 PAGE_TEMPLATE = """<!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -43,6 +48,27 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 {meta}
+
+<!-- Google Consent Mode v2: defaults set to "denied" before any tag loads.
+     Must run before gtag.js so the first hit already carries denied state. -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){{dataLayer.push(arguments);}}
+gtag('consent', 'default', {{
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied',
+  'wait_for_update': 500
+}});
+gtag('set', 'url_passthrough', true);
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={ga_id}"></script>
+<script>
+gtag('js', new Date());
+gtag('config', '{ga_id}', {{ 'anonymize_ip': true }});
+{ads_config}
+</script>
 </head>
 <body>
 
@@ -63,6 +89,17 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 
 {footer}
 
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Consentimento de cookies">
+  <div class="cookie-banner-inner">
+    <p>Utilizamos cookies para medir o desempenho do site e das nossas campanhas. Pode aceitar ou recusar os cookies não essenciais. Saiba mais na nossa <a href="cookies.html">Política de Cookies</a>.</p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="btn btn-outline" id="cookieReject">Recusar</button>
+      <button type="button" class="btn btn-cta" id="cookieAccept">Aceitar</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/consent.js"></script>
 <script src="js/script.js"></script>
 <script data-goatcounter="https://prospectaia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
@@ -79,9 +116,13 @@ def build_page(fragment_path: Path, nav: str, footer: str):
     meta = meta_part.replace("<!--META-->", "").strip("\n")
     body = body_part.strip("\n")
 
+    ads_config = f"gtag('config', '{GOOGLE_ADS_ID}');" if GOOGLE_ADS_ID else ""
+
     html = PAGE_TEMPLATE.format(
         favicon=FAVICON,
         meta=meta,
+        ga_id=GA_MEASUREMENT_ID,
+        ads_config=ads_config,
         nav=nav.strip("\n"),
         body=body,
         footer=footer.strip("\n"),

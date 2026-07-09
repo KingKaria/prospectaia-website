@@ -110,6 +110,9 @@ if (contactForm) {
         statusEl.className = 'form-status success';
         statusEl.textContent = 'Mensagem enviada com sucesso! Entraremos em contacto em breve.';
         contactForm.reset();
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { form_id: 'contactForm' });
+        }
       } else {
         throw new Error(result.message || 'Falha no envio');
       }
@@ -122,3 +125,12 @@ if (contactForm) {
     }
   });
 }
+
+// ============ WHATSAPP CLICK TRACKING ============
+document.querySelectorAll('a[href^="https://wa.me/"]').forEach(link => {
+  link.addEventListener('click', () => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'contact_whatsapp');
+    }
+  });
+});
