@@ -64,6 +64,7 @@ gtag('consent', 'default', {{
 gtag('set', 'url_passthrough', true);
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id={ga_id}"></script>
+{ads_loader}
 <script>
 gtag('js', new Date());
 gtag('config', '{ga_id}', {{ 'anonymize_ip': true }});
@@ -117,12 +118,17 @@ def build_page(fragment_path: Path, nav: str, footer: str):
     body = body_part.strip("\n")
 
     ads_config = f"gtag('config', '{GOOGLE_ADS_ID}');" if GOOGLE_ADS_ID else ""
+    ads_loader = (
+        f'<script async src="https://www.googletagmanager.com/gtag/js?id={GOOGLE_ADS_ID}"></script>'
+        if GOOGLE_ADS_ID else ""
+    )
 
     html = PAGE_TEMPLATE.format(
         favicon=FAVICON,
         meta=meta,
         ga_id=GA_MEASUREMENT_ID,
         ads_config=ads_config,
+        ads_loader=ads_loader,
         nav=nav.strip("\n"),
         body=body,
         footer=footer.strip("\n"),
