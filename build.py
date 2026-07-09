@@ -36,7 +36,7 @@ FAVICON = (
 GA_MEASUREMENT_ID = "G-E9PZLXPZZC"
 # Google Ads unified tag (format "GT-XXXXXXXXX" or "AW-XXXXXXXXX"). Leave
 # empty until the account exists; gtag calls skip it automatically when blank.
-GOOGLE_ADS_ID = "GT-NSLN3SGQ"
+GOOGLE_ADS_ID = "AW-18214310940"
 
 PAGE_TEMPLATE = """<!DOCTYPE html>
 <html lang="pt">
