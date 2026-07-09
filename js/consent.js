@@ -15,7 +15,7 @@
     });
   }
 
-  const stored = localStorage.getItem(STORAGE_KEY);
+  const stored = sessionStorage.getItem(STORAGE_KEY);
   if (stored === 'granted' || stored === 'denied') {
     updateConsent(stored === 'granted');
   } else if (banner) {
@@ -24,7 +24,7 @@
 
   if (acceptBtn) {
     acceptBtn.addEventListener('click', () => {
-      localStorage.setItem(STORAGE_KEY, 'granted');
+      sessionStorage.setItem(STORAGE_KEY, 'granted');
       updateConsent(true);
       banner.classList.remove('visible');
     });
@@ -32,7 +32,7 @@
 
   if (rejectBtn) {
     rejectBtn.addEventListener('click', () => {
-      localStorage.setItem(STORAGE_KEY, 'denied');
+      sessionStorage.setItem(STORAGE_KEY, 'denied');
       updateConsent(false);
       banner.classList.remove('visible');
     });
