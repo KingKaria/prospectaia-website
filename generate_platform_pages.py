@@ -162,6 +162,34 @@ PLATFORMS = [
             ("Presença Consistente com a Imagem da Marca", "Garantimos que a comunicação no LinkedIn reflete o mesmo profissionalismo do resto do negócio."),
         ],
     },
+    {
+        "slug": "fresha",
+        "name": "Fresha",
+        "icon": "💇",
+        "subtitle": "A maior marketplace de marcações de beleza — esteja visível onde milhões de clientes já procuram salão",
+        "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
+        "intro": "O Fresha tornou-se a plataforma de referência para marcações em salões de cabeleireiro, barbearias e centros de estética. Um perfil bem otimizado aqui significa aparecer primeiro quando alguém procura marcação para hoje ou amanhã — e não perder essa marcação para o concorrente ao lado.",
+        "benefits": [
+            ("Perfil Otimizado para Aparecer Primeiro na Marketplace", "Ajustamos categoria, serviços e palavras-chave para que o seu salão apareça nas primeiras posições quando alguém procura marcação na sua zona."),
+            ("Agenda Sempre Atualizada, Zero Marcações Perdidas", "Garantimos que disponibilidade, preços e serviços estão sempre corretos, eliminando o atrito que faz o cliente desistir e marcar noutro lado."),
+            ("Gestão de Reviews que Constrói Confiança Imediata", "Respondemos a cada avaliação com um tom profissional e consistente, reforçando a reputação que decide entre marcar consigo ou com a concorrência."),
+            ("Fotos e Portefólio que Convertem Visualização em Marcação", "Cuidamos da apresentação visual do seu perfil — o fator que mais pesa na decisão de quem está a comparar vários salões ao mesmo tempo."),
+        ],
+    },
+    {
+        "slug": "treatwell",
+        "name": "Treatwell",
+        "icon": "💆",
+        "subtitle": "A plataforma líder na Europa para descobrir e reservar salões e spas — presença aqui é visibilidade garantida",
+        "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80",
+        "intro": "Para spas, salões e centros de bem-estar, o Treatwell é muitas vezes a primeira paragem de quem procura um tratamento novo numa zona desconhecida. Estar bem posicionado aqui abre a porta a um fluxo constante de clientes que, de outra forma, nunca chegariam a conhecer o seu espaço.",
+        "benefits": [
+            ("Maior Visibilidade Junto de Quem Procura Marcar Já", "Otimizamos o perfil para captar o público que está pronto a reservar um tratamento nos próximos dias, não só a pesquisar."),
+            ("Reputação Gerida para Reforçar Cada Decisão de Reserva", "Cuidamos das respostas a avaliações, mantendo a pontuação que mais pesa na hora de escolher entre spas parecidos."),
+            ("Promoções Estratégicas para Preencher os Horários Mais Fracos", "Ajudamos a desenhar ofertas que enchem a agenda nos períodos de menor procura, sem desvalorizar o serviço."),
+            ("Perfil Visual Cuidado que Transmite Qualidade e Higiene", "Fotos e descrição são organizadas para comunicar profissionalismo — essencial num setor onde a confiança decide tudo."),
+        ],
+    },
 ]
 
 PAGE_TEMPLATE = """<!--META-->
