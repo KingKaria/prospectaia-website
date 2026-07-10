@@ -843,7 +843,7 @@ a.why-card .card-link-hint{ color: var(--accent); }
   }
   .nav-menu.open{ right:0; }
   .hamburger{ display:flex; }
-  .btn-cta{ display:none; }
+  .navbar-inner > .btn-cta{ display:none; }
 
   .nav-dropdown{ width:100%; }
   .nav-dropdown-menu{
