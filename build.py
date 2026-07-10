@@ -20,18 +20,11 @@ PAGES_DIR = ROOT / "pages"
 PARTIALS_DIR = ROOT / "partials"
 SITE_URL = "https://" + (ROOT / "CNAME").read_text(encoding="utf-8").strip()
 
-FAVICON = (
-    "data:image/svg+xml,"
-    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>"
-    "<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>"
-    "<stop offset='0' stop-color='%23667eea'/>"
-    "<stop offset='1' stop-color='%2300d4ff'/>"
-    "</linearGradient></defs>"
-    "<rect width='100' height='100' rx='24' fill='url(%23g)'/>"
-    "<text x='50' y='69' font-family='Segoe UI, Arial, sans-serif' "
-    "font-size='58' font-weight='800' fill='white' text-anchor='middle'>P</text>"
-    "</svg>"
-)
+FAVICON_LINKS = """<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icon-180.png">"""
 
 GA_MEASUREMENT_ID = "G-E9PZLXPZZC"
 # Google Ads unified tag (format "GT-XXXXXXXXX" or "AW-XXXXXXXXX"). Leave
@@ -43,7 +36,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="{favicon}">
+{favicon_links}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -120,7 +113,7 @@ def build_page(fragment_path: Path, nav: str, footer: str):
     ads_config = f"gtag('config', '{GOOGLE_ADS_ID}');" if GOOGLE_ADS_ID else ""
 
     html = PAGE_TEMPLATE.format(
-        favicon=FAVICON,
+        favicon_links=FAVICON_LINKS,
         meta=meta,
         ga_id=GA_MEASUREMENT_ID,
         ads_config=ads_config,
