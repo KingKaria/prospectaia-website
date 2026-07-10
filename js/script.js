@@ -23,13 +23,26 @@ window.addEventListener('scroll', () => {
 // ============ HAMBURGER MENU ============
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
+const navBackdrop = document.getElementById('navBackdrop');
+
+function closeNavMenu() {
+  navMenu.classList.remove('open');
+  navBackdrop.classList.remove('visible');
+}
 
 hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('open');
+  navBackdrop.classList.toggle('visible');
+});
+
+navBackdrop.addEventListener('click', closeNavMenu);
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeNavMenu();
 });
 
 navMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => navMenu.classList.remove('open'));
+  link.addEventListener('click', closeNavMenu);
 });
 
 // ============ FAQ ACCORDION ============

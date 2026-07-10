@@ -79,6 +79,8 @@ gtag('config', '{ga_id}', {{ 'anonymize_ip': true }});
   </div>
 </header>
 
+<div class="nav-backdrop" id="navBackdrop"></div>
+
 {body}
 
 {footer}
