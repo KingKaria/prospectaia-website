@@ -73,7 +73,7 @@ gtag('config', '{ga_id}', {{ 'anonymize_ip': true }});
     {nav}
     <a href="contacto.html" class="btn btn-cta">Iniciar Conversa</a>
 
-    <button class="hamburger" id="hamburger" aria-label="Abrir menu de navegação">
+    <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navMenu">
       <span></span><span></span><span></span>
     </button>
   </div>
