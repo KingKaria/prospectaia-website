@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Plataformas | ProspectaIA</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B2530'/%3E%3Cpath fill='%231FD2A5' fill-rule='evenodd' d='M18 8 H37 A19 19 0 0 1 37 46 H27.5 V56 H18 Z M37 17.5 L46.5 28.9 H41.75 V36.5 H32.25 V28.9 H27.5 Z'/%3E%3C/svg%3E">
+  <meta name="description" content="Como gerimos a sua presenÃ§a em cada plataforma: Google, Tripadvisor, Booking, TheFork, Airbnb, Instagram e mais.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #071A22; }
+    body { font-family: 'Manrope', sans-serif; }
+    a { color: #1FD2A5; text-decoration: none; }
+    a:hover { color: #3ADFB6; }
+    ::selection { background: #1FD2A5; color: #04211A; }
+    .nav-dd { position: relative; }
+    .nav-dd-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); padding-top: 14px; opacity: 0; visibility: hidden; transition: opacity 0.25s ease-out, transform 0.25s ease-out, visibility 0.25s; z-index: 120; }
+    .nav-dd:hover .nav-dd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    #topnav-links { display: flex; align-items: center; gap: 32px; }
+    @media (max-width: 1280px) { #topnav-links { gap: 18px; } #topnav-links > a, #topnav-links .nav-dd-label { font-size: 14px !important; } }
+    @media (max-width: 1080px) { #topnav-links .nav-dd { display: none; } }
+    @media (max-width: 860px) { #topnav-links > a:not([href="contacto.dc.html"]) { display: none; } }
+  </style>
+  <script src="cookies.js" defer></script>
+</helmet>
+
+<div style="background: #071A22; color: #E8F0F2; min-height: 100vh; overflow-x: hidden;">
+
+  <!-- ===== NAV ===== -->
+  <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 48px; background: rgba(7,26,34,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.07);">
+    <a href="inicio.dc.html" style="display: flex; align-items: center; gap: 10px; font-family: 'Sora', sans-serif; font-weight: 600; font-size: 20px; color: #F2F7F8; letter-spacing: -0.015em;"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><path fill="#1FD2A5" fill-rule="evenodd" d="M16 6 H36 A20 20 0 0 1 36 46 H26 V58 H16 Z M36 16 L46 28 H41 V36 H31 V28 H26 Z"></path></svg><span>Prospecta<span style="margin-left: 0.02em;">IA</span></span></a>
+    <div id="topnav-links">
+      <a href="inicio.dc.html" style="color: #B8CBD1; font-weight: 500; font-size: 15px;" style-hover="color: #F2F7F8;">InÃ­cio</a>
+      <a href="servicos.dc.html" style="color: #1FD2A5; font-weight: 700; font-size: 15px;">ServiÃ§os</a>
+      <div class="nav-dd">
+        <span class="nav-dd-label" style="color: #B8CBD1; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 5px; cursor: pointer;">Setores <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></span>
+        <div class="nav-dd-menu">
+          <div style="background: #0B2530; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 8px; min-width: 235px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); display: flex; flex-direction: column;">
+            <a href="nicho.dc.html?n=restaurantes" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Restaurantes</a>
+            <a href="nicho.dc.html?n=clinicas-dentarias" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">ClÃ­nicas DentÃ¡rias</a>
+            <a href="nicho.dc.html?n=ginasios" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">GinÃ¡sios</a>
+            <a href="nicho.dc.html?n=saloes" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">SalÃµes de Cabeleireiro</a>
+            <a href="nicho.dc.html?n=estudios-beleza" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">EstÃºdios de Beleza</a>
+            <a href="nicho.dc.html?n=spas" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Spas</a>
+            <a href="nicho.dc.html?n=veterinarios" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">ClÃ­nicas VeterinÃ¡rias</a>
+            <a href="nicho.dc.html?n=escolas-conducao" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Escolas de ConduÃ§Ã£o</a>
+            <a href="nicho.dc.html?n=fisioterapia" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Fisioterapia</a>
+            <a href="nicho.dc.html?n=hoteis" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Pequenos HotÃ©is e AL</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-dd">
+        <span class="nav-dd-label" style="color: #B8CBD1; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 5px; cursor: pointer;">Plataformas <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></span>
+        <div class="nav-dd-menu">
+          <div style="background: #0B2530; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 8px; min-width: 430px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); display: grid; grid-template-columns: 1fr 1fr; gap: 2px;">
+            <a href="plataforma.dc.html?p=gmb" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Google Maps</a>
+            <a href="plataforma.dc.html?p=google-reviews" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Google Reviews</a>
+            <a href="plataforma.dc.html?p=tripadvisor" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Tripadvisor</a>
+            <a href="plataforma.dc.html?p=booking" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Booking.com</a>
+            <a href="plataforma.dc.html?p=thefork" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">TheFork</a>
+            <a href="plataforma.dc.html?p=airbnb" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Airbnb</a>
+            <a href="plataforma.dc.html?p=vrbo" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Vrbo</a>
+            <a href="plataforma.dc.html?p=yelp" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Yelp</a>
+            <a href="plataforma.dc.html?p=facebook" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Facebook</a>
+            <a href="plataforma.dc.html?p=instagram" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Instagram</a>
+            <a href="plataforma.dc.html?p=linkedin" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">LinkedIn</a>
+            <a href="plataforma.dc.html?p=fresha" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Fresha</a>
+            <a href="plataforma.dc.html?p=treatwell" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Treatwell</a>
+          </div>
+        </div>
+      </div>
+      <a href="planos.dc.html" style="color: #B8CBD1; font-weight: 500; font-size: 15px;" style-hover="color: #F2F7F8;">Planos</a>
+      <a href="sobre.dc.html" style="color: #B8CBD1; font-weight: 500; font-size: 15px;" style-hover="color: #F2F7F8;">Sobre NÃ³s</a>
+      <a href="contacto.dc.html" style="color: #B8CBD1; font-weight: 500; font-size: 15px;" style-hover="color: #F2F7F8;">Contacto</a>
+      <a href="contacto.dc.html" style="background: #1FD2A5; color: #04211A; font-weight: 700; font-size: 15px; padding: 10px 22px; border-radius: 8px; transition: all 0.3s ease-out;" style-hover="background: #3ADFB6; transform: translateY(-2px);">DiagnÃ³stico Gratuito</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header data-screen-label="Plataforma Hero" style="padding: 160px 48px 80px; background: linear-gradient(180deg, #0B2530 0%, #071A22 100%);">
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+      <div style="display: flex; justify-content: center; align-items: center; gap: 8px; font-size: 13px; color: #7E97A0; margin-bottom: 32px;"><a href="inicio.dc.html" style="color: #7E97A0;" style-hover="color: #1FD2A5;">InÃ­cio</a><span>âº</span><a href="inicio.dc.html#plataformas" style="color: #7E97A0;" style-hover="color: #1FD2A5;">Plataformas</a><span>âº</span><span style="color: #1FD2A5; font-weight: 600;">{{ name }}</span></div>
+      <div style="display: flex; justify-content: center; margin-bottom: 28px;">
+        <div style="min-width: 96px; height: 96px; padding: 0 20px; box-sizing: border-box; border-radius: 24px; background: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 20px 50px rgba(0,0,0,0.4);">
+          <span style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 44px; color: {{ logoFg }};">{{ logoInitial }}</span>
+        </div>
+      </div>
+      <div style="color: #1FD2A5; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px;">GestÃ£o de {{ name }}</div>
+      <h1 style="font-family: 'Sora', sans-serif; font-size: 42px; font-weight: 800; letter-spacing: -0.025em; line-height: 1.18; margin: 0 0 32px; color: #F2F7F8; text-wrap: pretty;">{{ hook }}</h1>
+      <a href="contacto.dc.html" style="background: #1FD2A5; color: #04211A; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; padding: 15px 30px; border-radius: 10px; display: inline-block; transition: all 0.3s ease-out; box-shadow: 0 8px 30px rgba(31,210,165,0.25);" style-hover="background: #3ADFB6; transform: translateY(-3px);">Pedir DiagnÃ³stico Gratuito do seu perfil {{ name }}</a>
+    </div>
+  </header>
+
+  <!-- ===== O QUE ESTÃ A PERDER ===== -->
+  <section data-screen-label="O que estÃ¡ a perder" style="padding: 88px 48px; background: #0B2530;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <h2 data-reveal style="font-family: 'Sora', sans-serif; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 40px; color: #F2F7F8;">O que estÃ¡ a perder sem uma presenÃ§a forte</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <sc-for list="{{ losing }}" as="item" hint-placeholder-count="3">
+          <div data-reveal style="background: #0F2E3B; border: 1px solid rgba(224,120,86,0.25); border-radius: 14px; padding: 30px 26px;">
+            <div style="font-family: 'Sora', sans-serif; font-size: 18px; font-weight: 700; color: #E07856; margin-bottom: 10px;">{{ item.t }}</div>
+            <p style="font-size: 15px; line-height: 1.6; color: #B8CBD1; margin: 0;">{{ item.d }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== O QUE FAZEMOS ===== -->
+  <section data-screen-label="O que fazemos" style="padding: 88px 48px;">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <h2 data-reveal style="font-family: 'Sora', sans-serif; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 40px; color: #F2F7F8;">O que fazemos por si</h2>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <sc-for list="{{ doing }}" as="item" hint-placeholder-count="4">
+          <div data-reveal style="display: flex; align-items: flex-start; gap: 16px; background: #0F2E3B; border: 1px solid rgba(31,210,165,0.2); border-radius: 12px; padding: 20px 24px;">
+            <span style="width: 26px; height: 26px; border-radius: 50%; background: rgba(31,210,165,0.15); color: #1FD2A5; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">â</span>
+            <span style="font-size: 16px; line-height: 1.55; color: #E8F0F2;">{{ item }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PARA QUEM Ã ===== -->
+  <section data-screen-label="Para quem Ã©" style="padding: 72px 48px; background: #0B2530;">
+    <div data-reveal style="max-width: 900px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Sora', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 28px; color: #F2F7F8;">Para quem Ã©</h2>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;">
+        <sc-for list="{{ sectors }}" as="s" hint-placeholder-count="4">
+          <span style="display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(31,210,165,0.35); background: rgba(31,210,165,0.07); border-radius: 999px; padding: 10px 20px; font-size: 15px; font-weight: 600; color: #E8F0F2;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #1FD2A5;"></span>{{ s }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section data-screen-label="CTA" style="padding: 88px 48px; background: linear-gradient(135deg, #0B2530 0%, #0F3A38 100%);">
+    <div data-reveal style="max-width: 780px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Sora', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.015em; margin: 0 0 12px; color: #F2F7F8; text-wrap: pretty;">Descubra o que o seu perfil {{ name }} estÃ¡ a deixar na mesa.</h2>
+      <p style="font-size: 17px; color: #B8CBD1; margin: 0 0 30px;">AnÃ¡lise gratuita e especÃ­fica desta plataforma. Sem compromisso, resposta em 24h.</p>
+      <a href="contacto.dc.html" style="background: #1FD2A5; color: #04211A; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; padding: 15px 30px; border-radius: 10px; display: inline-block; transition: all 0.3s ease-out;" style-hover="background: #3ADFB6; transform: translateY(-3px);">Pedir DiagnÃ³stico Gratuito do seu perfil {{ name }}</a>
+    </div>
+  </section>
+
+  <!-- ===== TAMBÃM GERIMOS ===== -->
+  <section data-screen-label="TambÃ©m gerimos" style="padding: 64px 48px; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div style="font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 700; color: #F2F7F8; margin-bottom: 20px;">TambÃ©m gerimos:</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+        <sc-for list="{{ others }}" as="o" hint-placeholder-count="6">
+          <a href="{{ o.href }}" style="display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 9px 18px; font-size: 14px; font-weight: 600; color: #B8CBD1; transition: all 0.3s ease-out;" style-hover="border-color: rgba(31,210,165,0.5); color: #F2F7F8; transform: translateY(-2px);">
+            <span style="height: 22px; min-width: 22px; padding: 0 3px; border-radius: 6px; background: #FFFFFF; display: inline-flex; align-items: center; justify-content: center;">{{ o.initial }}</span>
+            {{ o.name }}
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background: #05141B; padding: 64px 48px 32px; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; margin-bottom: 48px;">
+        <div>
+          <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 20px; color: #F2F7F8; margin-bottom: 14px;">Prospecta<span style="margin-left: 0.02em;">IA</span></div>
+          <p style="font-size: 14px; line-height: 1.6; color: #7E97A0; margin: 0; max-width: 300px;">OtimizaÃ§Ã£o da presenÃ§a digital de negÃ³cios locais em Portugal. Mais visibilidade, mais avaliaÃ§Ãµes, mais reservas.</p>
+        </div>
+        <div>
+          <div style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; color: #F2F7F8; margin-bottom: 16px;">NavegaÃ§Ã£o</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="inicio.dc.html" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">InÃ­cio</a>
+            <a href="servicos.dc.html" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">ServiÃ§os</a>
+            <a href="planos.dc.html" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">Planos</a>
+            <a href="sobre.dc.html" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">Sobre NÃ³s</a>
+            <a href="contacto.dc.html" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">Contacto</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; color: #F2F7F8; margin-bottom: 16px;">Contacto direto</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="mailto:contacto@prospectaia.pt" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">contacto@prospectaia.pt</a>
+            <a href="https://wa.me/351937158315" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">+351 937 158 315 (WhatsApp)</a>
+            <span style="color: #7E97A0; font-size: 14px;">SegâSex, 9h00 â 18h00</span>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #5A7078;">
+        <span>Â© 2026 ProspectaIA. Todos os direitos reservados.</span>
+        <div style="display: flex; flex-wrap: wrap; gap: 18px;">
+          <a href="legal.dc.html?s=privacidade" style="color: #5A7078; font-size: 13px;" style-hover="color: #1FD2A5;">PolÃ­tica de Privacidade</a>
+          <a href="legal.dc.html?s=cookies" style="color: #5A7078; font-size: 13px;" style-hover="color: #1FD2A5;">Cookies</a>
+          <a href="legal.dc.html?s=termos" style="color: #5A7078; font-size: 13px;" style-hover="color: #1FD2A5;">Termos e CondiÃ§Ãµes</a>
+          <a href="legal.dc.html?s=aviso" style="color: #5A7078; font-size: 13px;" style-hover="color: #1FD2A5;">Aviso Legal</a>
+          <a href="https://www.livroreclamacoes.pt" style="color: #5A7078; font-size: 13px;" style-hover="color: #1FD2A5;">Livro de ReclamaÃ§Ãµes</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== WHATSAPP FLUTUANTE ===== -->
+  <a href="https://wa.me/351937158315" style="position: fixed; bottom: 24px; right: 24px; z-index: 200; display: flex; align-items: center; gap: 10px; background: #25D366; color: #06301B; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px; padding: 13px 22px; border-radius: 999px; box-shadow: 0 10px 30px rgba(37,211,102,0.35); transition: all 0.3s ease-out;" style-hover="transform: translateY(-3px); box-shadow: 0 16px 40px rgba(37,211,102,0.5);">
+    <span style="width: 9px; height: 9px; border-radius: 50%; background: #06301B;"></span>
+    WhatsApp
+  </a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    document.title = this.data().name + ' | ProspectaIA';
+    requestAnimationFrame(() => this.setupReveals());
+  }
+  componentWillUnmount() { if (this._obs) this._obs.disconnect(); }
+
+  setupReveals() {
+    const els = document.querySelectorAll('[data-reveal]');
+    els.forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(28px)';
+      el.style.transition = 'opacity 0.55s ease-out, transform 0.55s ease-out';
+    });
+    this._obs = new IntersectionObserver((entries) => {
+      entries.forEach((en, idx) => {
+        if (en.isIntersecting) {
+          setTimeout(() => {
+            en.target.style.opacity = '1';
+            en.target.style.transform = 'translateY(0)';
+          }, idx * 90);
+          this._obs.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach((el) => this._obs.observe(el));
+  }
+
+  platforms() {
+    return {
+      'gmb': {
+        name: 'Google Maps', initial: 'G', bg: '#FFFFFF', fg: '#4285F4',
+        hook: 'Quando alguÃ©m pesquisa "restaurante perto de mim", o Google decide quem aparece. NÃ³s fazemos com que seja vocÃª.',
+        losing: [
+          { t: 'Invisibilidade local', d: 'Sem otimizaÃ§Ã£o, o seu negÃ³cio nÃ£o aparece no mapa â e quem nÃ£o aparece, nÃ£o existe para quem pesquisa.' },
+          { t: 'Clientes que desconfiam', d: 'HorÃ¡rios errados e fotos antigas fazem o cliente duvidar e ligar ao concorrente seguinte.' },
+          { t: 'Perguntas sem resposta', d: 'Cada pergunta ignorada no perfil Ã© um cliente que desiste antes de contactar.' }
+        ],
+        doing: ['OtimizaÃ§Ã£o completa do perfil: categorias, atributos e descriÃ§Ã£o', 'Fotos atualizadas e organizadas por secÃ§Ã£o', 'HorÃ¡rios sempre corretos, incluindo feriados', 'PublicaÃ§Ãµes semanais que mantÃªm o perfil vivo', 'Resposta a todas as perguntas de clientes'],
+        sectors: ['Restaurantes', 'ClÃ­nicas dentÃ¡rias', 'GinÃ¡sios', 'SalÃµes', 'Spas', 'VeterinÃ¡rios', 'Pequenos hotÃ©is']
+      },
+      'google-reviews': {
+        name: 'Google Reviews', initial: 'â', bg: '#FBBC05', fg: '#212121',
+        hook: 'Uma estrela a mais no Google pode significar atÃ© 9% mais receita. Uma avaliaÃ§Ã£o sem resposta afasta 3 em cada 4 clientes.',
+        losing: [
+          { t: 'MÃ©dia a travar vendas', d: 'Abaixo de 4,0â, a maioria dos clientes nem considera o seu negÃ³cio.' },
+          { t: 'Negativas sem resposta', d: 'Uma crÃ­tica ignorada diz a todos os futuros clientes que nÃ£o se importa.' },
+          { t: 'Satisfeitos em silÃªncio', d: 'Os seus melhores clientes nÃ£o avaliam â porque ninguÃ©m lhes pede da forma certa.' }
+        ],
+        doing: ['Resposta profissional a todas as avaliaÃ§Ãµes em 24-48h', 'EstratÃ©gia Ã©tica para gerar mais avaliaÃ§Ãµes genuÃ­nas', 'GestÃ£o cuidada de avaliaÃ§Ãµes negativas', 'MonitorizaÃ§Ã£o contÃ­nua da reputaÃ§Ã£o', 'RelatÃ³rio mensal da evoluÃ§Ã£o da mÃ©dia'],
+        sectors: ['Restaurantes', 'ClÃ­nicas dentÃ¡rias', 'GinÃ¡sios', 'SalÃµes', 'Spas', 'VeterinÃ¡rios', 'Pequenos hotÃ©is']
+      },
+      'tripadvisor': {
+        name: 'Tripadvisor', initial: 'T', bg: '#34E0A1', fg: '#04211A',
+        hook: 'Turistas decidem onde comer e dormir no Tripadvisor antes de chegarem Ã  sua cidade.',
+        losing: [
+          { t: 'Turistas que nunca chegam', d: 'Quem planeia a viagem escolhe pelo ranking â perfis fracos ficam fora do roteiro.' },
+          { t: 'Ranking em queda', d: 'Sem avaliaÃ§Ãµes recentes, o algoritmo empurra-o para baixo da lista.' },
+          { t: 'Fotos que afastam', d: 'Imagens desatualizadas ou de fraca qualidade custam reservas todos os dias.' }
+        ],
+        doing: ['OtimizaÃ§Ã£o completa do perfil e da descriÃ§Ã£o', 'GestÃ£o e resposta a todas as avaliaÃ§Ãµes', 'EstratÃ©gia para subir no ranking da sua categoria', 'Fotos e conteÃºdo alinhados com o que os turistas procuram'],
+        sectors: ['Restaurantes', 'Pequenos hotÃ©is', 'Alojamento local']
+      },
+      'booking': {
+        name: 'Booking.com', initial: 'B', bg: '#003580', fg: '#FFFFFF',
+        hook: 'Um anÃºncio mal otimizado no Booking significa quartos vazios e comissÃµes desperdiÃ§adas.',
+        losing: [
+          { t: 'Quartos por ocupar', d: 'AnÃºncios incompletos aparecem depois da concorrÃªncia â e o hÃ³spede reserva onde chega primeiro.' },
+          { t: 'ComissÃµes sem retorno', d: 'Paga a comissÃ£o de qualquer forma; sem otimizaÃ§Ã£o, paga-a por menos reservas.' },
+          { t: 'ComentÃ¡rios ao abandono', d: 'Respostas em falta baixam a pontuaÃ§Ã£o e a confianÃ§a de quem compara.' }
+        ],
+        doing: ['OtimizaÃ§Ã£o do anÃºncio: tÃ­tulo, descriÃ§Ã£o e comodidades', 'Fotos organizadas para maximizar conversÃ£o', 'EstratÃ©gia de pricing e visibilidade', 'GestÃ£o e resposta a todos os comentÃ¡rios de hÃ³spedes'],
+        sectors: ['Pequenos hotÃ©is', 'Alojamento local', 'Guesthouses']
+      },
+      'thefork': {
+        name: 'TheFork', initial: 'F', bg: '#00665C', fg: '#FFFFFF',
+        hook: 'Mesas vazias Ã s terÃ§as-feiras? O TheFork enche-as â se o seu perfil estiver bem trabalhado.',
+        losing: [
+          { t: 'Noites fracas sem soluÃ§Ã£o', d: 'Sem presenÃ§a ativa, perde o pÃºblico que reserva por promoÃ§Ãµes e disponibilidade.' },
+          { t: 'Perfil que nÃ£o convence', d: 'Menu desatualizado e fotos fracas fazem o cliente escolher outro restaurante em segundos.' },
+          { t: 'AvaliaÃ§Ãµes ignoradas', d: 'A pontuaÃ§Ã£o TheFork pesa na decisÃ£o â e cai quando ninguÃ©m responde.' }
+        ],
+        doing: ['Perfil completo com menu e fotos atualizados', 'EstratÃ©gia de promoÃ§Ãµes para as noites fracas', 'GestÃ£o da disponibilidade e das reservas', 'Resposta a todas as avaliaÃ§Ãµes'],
+        sectors: ['Restaurantes']
+      },
+      'airbnb': {
+        name: 'Airbnb', initial: 'A', bg: '#FF5A5F', fg: '#FFFFFF',
+        hook: 'AnÃºncios genÃ©ricos ficam na pÃ¡gina 5. AnÃºncios otimizados ficam ocupados o ano inteiro.',
+        losing: [
+          { t: 'Enterrado na pesquisa', d: 'TÃ­tulos e fotos genÃ©ricos condenam o anÃºncio Ã s Ãºltimas pÃ¡ginas.' },
+          { t: 'Ãpoca baixa vazia', d: 'Sem estratÃ©gia de preÃ§o e conteÃºdo, sÃ³ enche em agosto.' },
+          { t: 'HÃ³spedes sem resposta', d: 'Tempos de resposta lentos penalizam o ranking e matam reservas.' }
+        ],
+        doing: ['TÃ­tulo, descriÃ§Ã£o e fotos otimizados para o algoritmo', 'EstratÃ©gia de preÃ§os por Ã©poca', 'GestÃ£o de mensagens e avaliaÃ§Ãµes de hÃ³spedes', 'CalendÃ¡rio e regras sempre atualizados'],
+        sectors: ['Alojamento local', 'Guesthouses', 'Pequenos hotÃ©is']
+      },
+      'vrbo': {
+        name: 'Vrbo', initial: 'V', bg: '#245ABC', fg: '#FFFFFF',
+        hook: 'FamÃ­lias que ficam uma semana inteira procuram no Vrbo. Um anÃºncio fraco entrega-as Ã  concorrÃªncia.',
+        losing: [
+          { t: 'Estadias longas perdidas', d: 'O pÃºblico Vrbo reserva mais noites por estadia â e escolhe pelos detalhes do anÃºncio.' },
+          { t: 'Visibilidade desperdiÃ§ada', d: 'Sem otimizaÃ§Ã£o, o anÃºncio nÃ£o aparece nos filtros que as famÃ­lias usam.' },
+          { t: 'ConfianÃ§a por construir', d: 'Poucas avaliaÃ§Ãµes e respostas lentas afastam quem planeia com meses de antecedÃªncia.' }
+        ],
+        doing: ['AnÃºncio otimizado para o pÃºblico familiar', 'Fotos e comodidades destacadas para estadias longas', 'GestÃ£o de pedidos e avaliaÃ§Ãµes', 'SincronizaÃ§Ã£o de calendÃ¡rio com outras plataformas'],
+        sectors: ['Alojamento local', 'Guesthouses']
+      },
+      'yelp': {
+        name: 'Yelp', initial: 'Y', bg: '#D32323', fg: '#FFFFFF',
+        hook: 'Clientes internacionais confiam no Yelp. O seu perfil vazio diz-lhes para irem a outro lado.',
+        losing: [
+          { t: 'Turistas que passam ao lado', d: 'Americanos e canadianos verificam o Yelp primeiro â um perfil vazio Ã© um "fechado".' },
+          { t: 'InformaÃ§Ã£o errada', d: 'Perfis nÃ£o reclamados mostram dados desatualizados que afastam clientes.' },
+          { t: 'ReputaÃ§Ã£o ao acaso', d: 'Sem gestÃ£o, as poucas avaliaÃ§Ãµes que aparecem definem a sua imagem sozinhas.' }
+        ],
+        doing: ['ReclamaÃ§Ã£o e verificaÃ§Ã£o do perfil', 'InformaÃ§Ã£o, fotos e destaques completos', 'Resposta a avaliaÃ§Ãµes e mensagens', 'MonitorizaÃ§Ã£o da reputaÃ§Ã£o internacional'],
+        sectors: ['Restaurantes', 'SalÃµes', 'Spas', 'Pequenos hotÃ©is']
+      },
+      'facebook': {
+        name: 'Facebook', initial: 'f', bg: '#1877F2', fg: '#FFFFFF',
+        hook: 'O seu cliente mais fiel quer recomendar-vos aos amigos. DÃª-lhe uma pÃ¡gina que valha a pena partilhar.',
+        losing: [
+          { t: 'RecomendaÃ§Ãµes perdidas', d: 'Sem pÃ¡gina ativa, as partilhas e marcaÃ§Ãµes dos clientes caem no vazio.' },
+          { t: 'Mensagens ignoradas', d: 'Muitos clientes contactam primeiro pelo Messenger â e desistem sem resposta.' },
+          { t: 'Comunidade por explorar', d: 'Eventos e novidades locais vivem no Facebook; quem nÃ£o publica, nÃ£o participa.' }
+        ],
+        doing: ['PÃ¡gina completa e presenÃ§a ativa', 'Resposta rÃ¡pida a mensagens e comentÃ¡rios', 'PublicaÃ§Ã£o de eventos e novidades', 'ConteÃºdo pensado para partilha local'],
+        sectors: ['Restaurantes', 'GinÃ¡sios', 'SalÃµes', 'VeterinÃ¡rios']
+      },
+      'instagram': {
+        name: 'Instagram', initial: 'IG', bg: 'linear-gradient(45deg, #F58529, #DD2A7B 55%, #8134AF)', fg: '#FFFFFF',
+        hook: 'NegÃ³cios sem Instagram ativo parecem fechados. Literalmente â Ã© lÃ¡ que as pessoas verificam se ainda existem.',
+        losing: [
+          { t: 'Ar de abandono', d: 'Ãltima publicaÃ§Ã£o hÃ¡ 8 meses? Para o cliente, Ã© sinal de que fechou.' },
+          { t: 'Vitrine desperdiÃ§ada', d: 'O seu trabalho Ã© visual â sem feed cuidado, ninguÃ©m o vÃª.' },
+          { t: 'GeraÃ§Ã£o inteira fora', d: 'Para menores de 35, o Instagram Ã© o primeiro ponto de contacto com o negÃ³cio.' }
+        ],
+        doing: ['Feed consistente e alinhado com a marca', 'PublicaÃ§Ãµes e stories regulares', 'Resposta a comentÃ¡rios e mensagens diretas', 'Destaques organizados: serviÃ§os, preÃ§os, antes/depois'],
+        sectors: ['SalÃµes', 'Spas', 'Restaurantes', 'GinÃ¡sios']
+      },
+      'linkedin': {
+        name: 'LinkedIn', initial: 'in', bg: '#0A66C2', fg: '#FFFFFF',
+        hook: 'Credibilidade profissional para clÃ­nicas e serviÃ§os B2B â quem verifica antes de confiar, verifica no LinkedIn.',
+        losing: [
+          { t: 'Credibilidade em falta', d: 'Profissionais e empresas pesquisam no LinkedIn antes de fechar contratos e parcerias.' },
+          { t: 'Talento que nÃ£o chega', d: 'Sem pÃ¡gina ativa, os melhores candidatos nem consideram a sua equipa.' },
+          { t: 'Rede local por ativar', d: 'Parcerias com outras empresas locais nascem onde hÃ¡ presenÃ§a profissional.' }
+        ],
+        doing: ['PÃ¡gina de empresa completa e credÃ­vel', 'PublicaÃ§Ãµes regulares de autoridade no setor', 'OtimizaÃ§Ã£o dos perfis da equipa', 'EstratÃ©gia de rede com parceiros locais'],
+        sectors: ['ClÃ­nicas dentÃ¡rias', 'ServiÃ§os B2B', 'ClÃ­nicas e consultÃ³rios']
+      },
+      'fresha': {
+        name: 'Fresha', initial: 'F', bg: '#101928', fg: '#FFFFFF',
+        hook: 'SalÃµes e spas com agenda online cheia nÃ£o atendem telefone â as marcaÃ§Ãµes entram sozinhas, atÃ© Ã s 2 da manhÃ£.',
+        losing: [
+          { t: 'MarcaÃ§Ãµes fora de horas perdidas', d: 'Grande parte das marcaÃ§Ãµes acontece Ã  noite â quando o telefone nÃ£o toca.' },
+          { t: 'Agenda com buracos', d: 'Sem gestÃ£o de disponibilidade, os horÃ¡rios mortos ficam mortos.' },
+          { t: 'Clientes que nÃ£o voltam', d: 'Sem lembretes e rebooking, cada cliente Ã© uma venda Ãºnica.' }
+        ],
+        doing: ['Perfil e serviÃ§os otimizados na Fresha', 'Agenda online configurada e sempre atualizada', 'Lembretes automÃ¡ticos e reduÃ§Ã£o de faltas', 'EstratÃ©gia de rebooking e fidelizaÃ§Ã£o'],
+        sectors: ['SalÃµes', 'Spas', 'EstÃºdios de beleza', 'Barbearias']
+      },
+      'treatwell': {
+        name: 'Treatwell', initial: 'T', bg: '#FB6D51', fg: '#FFFFFF',
+        hook: 'No Treatwell, o cliente compara trÃªs salÃµes em dois minutos. O perfil mais completo fica com a marcaÃ§Ã£o.',
+        losing: [
+          { t: 'ComparaÃ§Ã£o perdida', d: 'Fotos fracas e serviÃ§os mal descritos entregam o cliente ao salÃ£o do lado.' },
+          { t: 'Novos clientes invisÃ­veis', d: 'O Treatwell traz quem ainda nÃ£o o conhece â se o perfil merecer o clique.' },
+          { t: 'AvaliaÃ§Ãµes ao acaso', d: 'Sem gestÃ£o, a pontuaÃ§Ã£o define-se sozinha â e nem sempre a seu favor.' }
+        ],
+        doing: ['Perfil completo com serviÃ§os, preÃ§os e fotos cuidadas', 'OtimizaÃ§Ã£o para aparecer nas pesquisas certas', 'GestÃ£o de avaliaÃ§Ãµes e pontuaÃ§Ã£o', 'AnÃ¡lise mensal de marcaÃ§Ãµes e desempenho'],
+        sectors: ['SalÃµes', 'Spas', 'EstÃºdios de beleza']
+      }
+    };
+  }
+
+  gSvg(size) {
+    return React.createElement('svg', { width: size, height: size, viewBox: '0 0 48 48', key: 'g' },
+      React.createElement('path', { fill: '#EA4335', d: 'M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z' }),
+      React.createElement('path', { fill: '#4285F4', d: 'M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z' }),
+      React.createElement('path', { fill: '#FBBC05', d: 'M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z' }),
+      React.createElement('path', { fill: '#34A853', d: 'M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z' })
+    );
+  }
+
+  logoMark(key, d, size) {
+    if (key === 'gmb') return this.gSvg(size);
+    if (key === 'google-reviews') {
+      return React.createElement('span', { style: { display: 'inline-flex', alignItems: 'center', gap: Math.round(size * 0.12) + 'px' } },
+        this.gSvg(size * 0.85),
+        React.createElement('span', { style: { color: '#FBBC05', fontSize: Math.round(size * 0.75) + 'px', lineHeight: 1 } }, 'â')
+      );
+    }
+    if (key === 'linkedin') {
+      return React.createElement('svg', { height: size, viewBox: '0 0 24 24', style: { display: 'block' } },
+        React.createElement('path', { fill: '#0A66C2', d: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z' })
+      );
+    }
+    if (key === 'fresha') {
+      return React.createElement('span', { style: { fontFamily: "'Manrope', sans-serif", fontWeight: 800, fontSize: Math.round(size * 0.62) + 'px', letterSpacing: '-0.02em', color: '#101928', lineHeight: 1 } }, 'fresha');
+    }
+    if (key === 'treatwell') {
+      return React.createElement('span', { style: { fontFamily: "'Manrope', sans-serif", fontWeight: 800, fontSize: Math.round(size * 0.62) + 'px', letterSpacing: '-0.02em', color: '#FB6D51', lineHeight: 1 } }, 'Treatwell');
+    }
+    if (key === 'thefork') {
+      return React.createElement('span', { style: { fontFamily: "'Manrope', sans-serif", fontWeight: 800, fontSize: Math.round(size * 0.62) + 'px', letterSpacing: '-0.02em', color: '#00665C', lineHeight: 1 } }, 'TheFork');
+    }
+    if (key === 'vrbo') {
+      return React.createElement('span', { style: { fontFamily: "'Manrope', sans-serif", fontWeight: 800, fontSize: Math.round(size * 0.62) + 'px', letterSpacing: '-0.02em', color: '#1F5CA9', lineHeight: 1 } }, 'Vrbo');
+    }
+    const slugs = { tripadvisor: 'tripadvisor', booking: 'bookingdotcom', airbnb: 'airbnb', yelp: 'yelp', facebook: 'facebook', instagram: 'instagram' };
+    return React.createElement('img', {
+      src: 'https://cdn.simpleicons.org/' + slugs[key],
+      alt: 'LogÃ³tipo ' + d.name,
+      style: { height: size + 'px', width: 'auto', display: 'block' },
+      loading: 'lazy'
+    });
+  }
+
+  data() {
+    const all = this.platforms();
+    const p = new URLSearchParams(window.location.search).get('p');
+    return all[p] || all['gmb'];
+  }
+
+  renderVals() {
+    const all = this.platforms();
+    const key = new URLSearchParams(window.location.search).get('p') || 'gmb';
+    const d = all[key] || all['gmb'];
+    const others = Object.keys(all).filter((k) => k !== key).map((k) => ({
+      href: 'plataforma.dc.html?p=' + k,
+      name: all[k].name,
+      initial: this.logoMark(k, all[k], 14)
+    }));
+    const isGoogle = key === 'gmb' || key === 'google-reviews';
+    return {
+      name: d.name,
+      hook: d.hook,
+      logoBg: isGoogle ? '#FFFFFF' : d.bg,
+      logoFg: d.fg,
+      logoInitial: this.logoMark(key, d, 48),
+      losing: d.losing,
+      doing: d.doing,
+      sectors: d.sectors,
+      others: others
+    };
+  }
+}
+</script>
+</body>
+</html>

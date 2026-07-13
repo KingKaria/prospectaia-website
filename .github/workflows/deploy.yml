@@ -21,25 +21,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-
-      - name: Build site from templates
-        run: python build.py
-
       - name: Prepare deploy folder
         run: |
           mkdir -p _site
           cp *.html _site/
-          cp -r css _site/
-          cp -r js _site/
-          cp -r assets _site/
-          cp assets/favicon.ico _site/favicon.ico
+          cp support.js _site/
+          cp cookies.js _site/
           cp CNAME _site/
           cp robots.txt _site/
-          cp sitemap.xml _site/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

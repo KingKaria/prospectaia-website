@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Contacto | ProspectaIA</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B2530'/%3E%3Cpath fill='%231FD2A5' fill-rule='evenodd' d='M18 8 H37 A19 19 0 0 1 37 46 H27.5 V56 H18 Z M37 17.5 L46.5 28.9 H41.75 V36.5 H32.25 V28.9 H27.5 Z'/%3E%3C/svg%3E">
+  <meta name="description" content="PeÃ§a o seu diagnÃ³stico gratuito: WhatsApp, telefone ou formulÃ¡rio de 30 segundos. Resposta em 24 horas Ãºteis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #071A22; }
+    body { font-family: 'Manrope', sans-serif; }
+    a { color: #1FD2A5; text-decoration: none; }
+    a:hover { color: #3ADFB6; }
+    ::selection { background: #1FD2A5; color: #04211A; }
+    .nav-dd { position: relative; }
+    .nav-dd-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); padding-top: 14px; opacity: 0; visibility: hidden; transition: opacity 0.25s ease-out, transform 0.25s ease-out, visibility 0.25s; z-index: 120; }
+    .nav-dd:hover .nav-dd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    #topnav-links { display: flex; align-items: center; gap: 32px; }
+    @media (max-width: 1280px) { #topnav-links { gap: 18px; } #topnav-links > a, #topnav-links .nav-dd-label { font-size: 14px !important; } }
+    @media (max-width: 1080px) { #topnav-links .nav-dd { display: none; } }
+    @media (max-width: 860px) { #topnav-links > a:not([href="contacto.dc.html"]) { display: none; } }
+    input::placeholder { color: #5A7078; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+  <script src="cookies.js" defer></script>
+</helmet>
+
+<div style="background: #071A22; color: #E8F0F2; min-height: 100vh; overflow-x: hidden;">
+
+  <!-- ===== NAV ===== -->
+  <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 48px; background: rgba(7,26,34,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.07);">
+    <a href="inicio.dc.html" style="display: flex; align-items: center; gap: 10px; font-family: 'Sora', sans-serif; font-weight: 600; font-size: 20px; color: #F2F7F8; letter-spacing: -0.015em;"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><path fill="#1FD2A5" fill-rule="evenodd" d="M16 6 H36 A20 20 0 0 1 36 46 H26 V58 H16 Z M36 16 L46 28 H41 V36 H31 V28 H26 Z"></path></svg><span>Prospecta<span style="margin-left: 0.02em;">IA</span></span></a>
+    <div id="topnav-links">
+      <a href="inicio.dc.html" style="color: #B8CBD1; font-weight: 500; font-size: 15px;" style-hover="color: #F2F7F8;">InÃ­cio</a>
+      <a href="servicos.dc.html" style="color: #B8CBD1; font-weight: 500; font-size: 15px;" style-hover="color: #F2F7F8;">ServiÃ§os</a>
+      <div class="nav-dd">
+        <span class="nav-dd-label" style="color: #B8CBD1; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 5px; cursor: pointer;">Setores <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></span>
+        <div class="nav-dd-menu">
+          <div style="background: #0B2530; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 8px; min-width: 235px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); display: flex; flex-direction: column;">
+            <a href="nicho.dc.html?n=restaurantes" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Restaurantes</a>
+            <a href="nicho.dc.html?n=clinicas-dentarias" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">ClÃ­nicas DentÃ¡rias</a>
+            <a href="nicho.dc.html?n=ginasios" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">GinÃ¡sios</a>
+            <a href="nicho.dc.html?n=saloes" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">SalÃµes de Cabeleireiro</a>
+            <a href="nicho.dc.html?n=estudios-beleza" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">EstÃºdios de Beleza</a>
+            <a href="nicho.dc.html?n=spas" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Spas</a>
+            <a href="nicho.dc.html?n=veterinarios" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">ClÃ­nicas VeterinÃ¡rias</a>
+            <a href="nicho.dc.html?n=escolas-conducao" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Escolas de ConduÃ§Ã£o</a>
+            <a href="nicho.dc.html?n=fisioterapia" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Fisioterapia</a>
+            <a href="nicho.dc.html?n=hoteis" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Pequenos HotÃ©is e AL</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-dd">
+        <span class="nav-dd-label" style="color: #B8CBD1; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 5px; cursor: pointer;">Plataformas <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></span>
+        <div class="nav-dd-menu">
+          <div style="background: #0B2530; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 8px; min-width: 430px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); display: grid; grid-template-columns: 1fr 1fr; gap: 2px;">
+            <a href="plataforma.dc.html?p=gmb" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Google Maps</a>
+            <a href="plataforma.dc.html?p=google-reviews" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Google Reviews</a>
+            <a href="plataforma.dc.html?p=tripadvisor" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Tripadvisor</a>
+            <a href="plataforma.dc.html?p=booking" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Booking.com</a>
+            <a href="plataforma.dc.html?p=thefork" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">TheFork</a>
+            <a href="plataforma.dc.html?p=airbnb" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Airbnb</a>
+            <a href="plataforma.dc.html?p=vrbo" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Vrbo</a>
+            <a href="plataforma.dc.html?p=yelp" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Yelp</a>
+            <a href="plataforma.dc.html?p=facebook" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Facebook</a>
+            <a href="plataforma.dc.html?p=instagram" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Instagram</a>
+            <a href="plataforma.dc.html?p=linkedin" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">LinkedIn</a>
+            <a href="plataforma.dc.html?p=fresha" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Fresha</a>
+            <a href="plataforma.dc.html?p=treatwell" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Treatwell</a>
+          </div>
+        </div>
+      </div>
+      <a href="planos.dc.html" style="color: #B8CBD1; font-weight: 500; font-size: 15px;" style-hover="color: #F2F7F8;">Planos</a>
+      <a href="sobre.dc.html" style="color: #B8CBD1; font-weight: 500; font-size: 15px;" style-hover="color: #F2F7F8;">Sobre NÃ³s</a>
+      <a href="contacto.dc.html" style="color: #1FD2A5; font-weight: 700; font-size: 15px;">Contacto</a>
+      <a href="contacto.dc.html" style="background: #1FD2A5; color: #04211A; font-weight: 700; font-size: 15px; padding: 10px 22px; border-radius: 8px; transition: all 0.3s ease-out;" style-hover="background: #3ADFB6; transform: translateY(-2px);">DiagnÃ³stico Gratuito</a>
+    </div>
+  </nav>
+
+  <!-- ===== CONTACTO ===== -->
+  <header data-screen-label="Contacto" style="padding: 160px 48px 88px; background: linear-gradient(180deg, #0B2530 0%, #071A22 100%);">
+    <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
+      <div>
+        <div style="color: #1FD2A5; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px;">Contacto</div>
+        <h1 style="font-family: 'Sora', sans-serif; font-size: 40px; font-weight: 800; letter-spacing: -0.025em; line-height: 1.18; margin: 0 0 18px; color: #F2F7F8; text-wrap: pretty;">PeÃ§a o seu diagnÃ³stico gratuito.</h1>
+        <p style="font-size: 18px; line-height: 1.6; color: #B8CBD1; margin: 0 0 36px;">Diga-nos quem Ã© e ligamos-lhe em menos de 24 horas Ãºteis. <strong style="color: #F2F7F8;">O diagnÃ³stico Ã© gratuito. NÃ£o fazer nada Ã© que tem custo.</strong></p>
+
+        <a href="https://wa.me/351937158315" style="display: flex; align-items: center; gap: 16px; background: #25D366; color: #06301B; border-radius: 14px; padding: 20px 24px; margin-bottom: 16px; transition: all 0.3s ease-out; box-shadow: 0 10px 30px rgba(37,211,102,0.25);" style-hover="transform: translateY(-3px); box-shadow: 0 16px 40px rgba(37,211,102,0.4);">
+          <span style="width: 12px; height: 12px; border-radius: 50%; background: #06301B; flex-shrink: 0;"></span>
+          <span>
+            <span style="display: block; font-family: 'Sora', sans-serif; font-weight: 800; font-size: 18px;">Falar jÃ¡ no WhatsApp</span>
+            <span style="display: block; font-size: 14px; font-weight: 600; opacity: 0.8;">+351 937 158 315 Â· canal mais rÃ¡pido</span>
+          </span>
+        </a>
+        <a href="tel:+351937158315" style="display: flex; align-items: center; gap: 16px; border: 1px solid rgba(255,255,255,0.12); color: #E8F0F2; border-radius: 14px; padding: 18px 24px; transition: all 0.3s ease-out;" style-hover="border-color: rgba(31,210,165,0.5);">
+          <span style="width: 12px; height: 12px; border-radius: 50%; background: #1FD2A5; flex-shrink: 0;"></span>
+          <span>
+            <span style="display: block; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; color: #F2F7F8;">Ligar: +351 937 158 315</span>
+            <span style="display: block; font-size: 13px; color: #7E97A0;">SegâSex, 9h00 â 18h00</span>
+          </span>
+        </a>
+      </div>
+
+      <div style="background: #0F2E3B; border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 36px 32px;">
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align: center; padding: 40px 0;">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(31,210,165,0.15); border: 2px solid #1FD2A5; color: #1FD2A5; font-size: 26px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">â</div>
+            <h2 style="font-family: 'Sora', sans-serif; font-size: 22px; font-weight: 700; color: #F2F7F8; margin: 0 0 10px;">Pedido recebido!</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: #B8CBD1; margin: 0;">Entramos em contacto consigo em menos de 24 horas Ãºteis. Se preferir nÃ£o esperar, fale connosco jÃ¡ pelo WhatsApp.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <h2 style="font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 700; color: #F2F7F8; margin: 0 0 6px;">Prefere que liguemos nÃ³s?</h2>
+            <p style="font-size: 14px; color: #8FA8B0; margin: 0 0 26px;">TrÃªs campos, trinta segundos.</p>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div>
+                <label style="display: block; font-size: 13px; font-weight: 700; color: #B8CBD1; margin-bottom: 7px;">O seu nome</label>
+                <input value="{{ nome }}" onChange="{{ setNome }}" placeholder="Ex.: Maria Santos" style="width: 100%; box-sizing: border-box; background: #0B2530; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 13px 16px; font-family: 'Manrope', sans-serif; font-size: 15px; color: #F2F7F8; outline: none; transition: border-color 0.3s ease-out;" style-focus="border-color: #1FD2A5;">
+              </div>
+              <div>
+                <label style="display: block; font-size: 13px; font-weight: 700; color: #B8CBD1; margin-bottom: 7px;">Nome do negÃ³cio</label>
+                <input value="{{ negocio }}" onChange="{{ setNegocio }}" placeholder="Ex.: ClÃ­nica Sorriso, Restaurante Mar" style="width: 100%; box-sizing: border-box; background: #0B2530; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 13px 16px; font-family: 'Manrope', sans-serif; font-size: 15px; color: #F2F7F8; outline: none; transition: border-color 0.3s ease-out;" style-focus="border-color: #1FD2A5;">
+              </div>
+              <div>
+                <label style="display: block; font-size: 13px; font-weight: 700; color: #B8CBD1; margin-bottom: 7px;">TelemÃ³vel</label>
+                <input value="{{ telefone }}" onChange="{{ setTelefone }}" placeholder="Ex.: 912 345 678" style="width: 100%; box-sizing: border-box; background: #0B2530; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 13px 16px; font-family: 'Manrope', sans-serif; font-size: 15px; color: #F2F7F8; outline: none; transition: border-color 0.3s ease-out;" style-focus="border-color: #1FD2A5;">
+              </div>
+              <button onClick="{{ submit }}" disabled="{{ loading }}" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: {{ btnBg }}; color: #04211A; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; padding: 15px 20px; border: none; border-radius: 10px; cursor: {{ btnCursor }}; margin-top: 8px; transition: all 0.3s ease-out; box-shadow: 0 8px 24px rgba(31,210,165,0.25);" style-hover="background: #3ADFB6; transform: translateY(-2px);"><sc-if value="{{ loading }}" hint-placeholder-val="{{ false }}"><span style="width: 16px; height: 16px; border: 2.5px solid rgba(4,33,26,0.25); border-top-color: #04211A; border-radius: 50%; display: inline-block; animation: spin 0.7s linear infinite;"></span></sc-if>{{ btnLabel }}</button>
+              <span style="font-size: 12px; color: #5A7078; text-align: center;">Sem compromisso Â· resposta em 24h Ãºteis</span>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background: #05141B; padding: 64px 48px 32px; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; margin-bottom: 48px;">
+        <div>
+          <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 20px; color: #F2F7F8; margin-bottom: 14px;">Prospecta<span style="margin-left: 0.02em;">IA</span></div>
+          <p style="font-size: 14px; line-height: 1.6; color: #7E97A0; margin: 0; max-width: 300px;">OtimizaÃ§Ã£o da presenÃ§a digital de negÃ³cios locais em Portugal. Mais visibilidade, mais avaliaÃ§Ãµes, mais reservas.</p>
+        </div>
+        <div>
+          <div style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; color: #F2F7F8; margin-bottom: 16px;">NavegaÃ§Ã£o</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="inicio.dc.html" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">InÃ­cio</a>
+            <a href="servicos.dc.html" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">ServiÃ§os</a>
+            <a href="planos.dc.html" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">Planos</a>
+            <a href="sobre.dc.html" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">Sobre NÃ³s</a>
+            <a href="contacto.dc.html" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">Contacto</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; color: #F2F7F8; margin-bottom: 16px;">Contacto direto</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="mailto:contacto@prospectaia.pt" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">contacto@prospectaia.pt</a>
+            <a href="https://wa.me/351937158315" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">+351 937 158 315 (WhatsApp)</a>
+            <span style="color: #7E97A0; font-size: 14px;">SegâSex, 9h00 â 18h00</span>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #5A7078;">
+        <span>Â© 2026 ProspectaIA. Todos os direitos reservados.</span>
+        <div style="display: flex; flex-wrap: wrap; gap: 18px;">
+          <a href="legal.dc.html?s=privacidade" style="color: #5A7078; font-size: 13px;" style-hover="color: #1FD2A5;">PolÃ­tica de Privacidade</a>
+          <a href="legal.dc.html?s=cookies" style="color: #5A7078; font-size: 13px;" style-hover="color: #1FD2A5;">Cookies</a>
+          <a href="legal.dc.html?s=termos" style="color: #5A7078; font-size: 13px;" style-hover="color: #1FD2A5;">Termos e CondiÃ§Ãµes</a>
+          <a href="legal.dc.html?s=aviso" style="color: #5A7078; font-size: 13px;" style-hover="color: #1FD2A5;">Aviso Legal</a>
+          <a href="https://www.livroreclamacoes.pt" style="color: #5A7078; font-size: 13px;" style-hover="color: #1FD2A5;">Livro de ReclamaÃ§Ãµes</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== WHATSAPP FLUTUANTE ===== -->
+  <a href="https://wa.me/351937158315" style="position: fixed; bottom: 24px; right: 24px; z-index: 200; display: flex; align-items: center; gap: 10px; background: #25D366; color: #06301B; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px; padding: 13px 22px; border-radius: 999px; box-shadow: 0 10px 30px rgba(37,211,102,0.35); transition: all 0.3s ease-out;" style-hover="transform: translateY(-3px); box-shadow: 0 16px 40px rgba(37,211,102,0.5);">
+    <span style="width: 9px; height: 9px; border-radius: 50%; background: #06301B;"></span>
+    WhatsApp
+  </a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { nome: '', negocio: '', telefone: '', sent: false, loading: false };
+
+  componentWillUnmount() { clearTimeout(this._t); }
+
+  renderVals() {
+    return {
+      nome: this.state.nome,
+      negocio: this.state.negocio,
+      telefone: this.state.telefone,
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      loading: this.state.loading,
+      btnLabel: this.state.loading ? 'A enviarâ¦' : 'Pedir DiagnÃ³stico Gratuito',
+      btnBg: this.state.loading ? '#17A583' : '#1FD2A5',
+      btnCursor: this.state.loading ? 'wait' : 'pointer',
+      setNome: (e) => this.setState({ nome: e.target.value }),
+      setNegocio: (e) => this.setState({ negocio: e.target.value }),
+      setTelefone: (e) => this.setState({ telefone: e.target.value }),
+      submit: () => {
+        if (this.state.loading) return;
+        this.setState({ loading: true });
+        this._t = setTimeout(() => this.setState({ loading: false, sent: true }), 1100);
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

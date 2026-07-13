@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Sobre NÃ³s | ProspectaIA</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B2530'/%3E%3Cpath fill='%231FD2A5' fill-rule='evenodd' d='M18 8 H37 A19 19 0 0 1 37 46 H27.5 V56 H18 Z M37 17.5 L46.5 28.9 H41.75 V36.5 H32.25 V28.9 H27.5 Z'/%3E%3C/svg%3E">
+  <meta name="description" content="A missÃ£o da ProspectaIA: dar aos negÃ³cios locais portugueses as armas digitais das grandes cadeias, com transparÃªncia e proximidade.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #071A22; }
+    body { font-family: 'Manrope', sans-serif; }
+    a { color: #1FD2A5; text-decoration: none; }
+    a:hover { color: #3ADFB6; }
+    ::selection { background: #1FD2A5; color: #04211A; }
+    .nav-dd { position: relative; }
+    .nav-dd-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); padding-top: 14px; opacity: 0; visibility: hidden; transition: opacity 0.25s ease-out, transform 0.25s ease-out, visibility 0.25s; z-index: 120; }
+    .nav-dd:hover .nav-dd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    #topnav-links { display: flex; align-items: center; gap: 32px; }
+    @media (max-width: 1280px) { #topnav-links { gap: 18px; } #topnav-links > a, #topnav-links .nav-dd-label { font-size: 14px !important; } }
+    @media (max-width: 1080px) { #topnav-links .nav-dd { display: none; } }
+    @media (max-width: 860px) { #topnav-links > a:not([href="contacto.dc.html"]) { display: none; } }
+  </style>
+  <script src="cookies.js" defer></script>
+</helmet>
+
+<div style="background: #071A22; color: #E8F0F2; min-height: 100vh; overflow-x: hidden;">
+
+  <!-- ===== NAV ===== -->
+  <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 48px; background: rgba(7,26,34,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.07);">
+    <a href="inicio.dc.html" style="display: flex; align-items: center; gap: 10px; font-family: 'Sora', sans-serif; font-weight: 600; font-size: 20px; color: #F2F7F8; letter-spacing: -0.015em;"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><path fill="#1FD2A5" fill-rule="evenodd" d="M16 6 H36 A20 20 0 0 1 36 46 H26 V58 H16 Z M36 16 L46 28 H41 V36 H31 V28 H26 Z"></path></svg><span>Prospecta<span style="margin-left: 0.02em;">IA</span></span></a>
+    <div id="topnav-links">
+      <a href="inicio.dc.html" style="color: #B8CBD1; font-weight: 500; font-size: 15px;" style-hover="color: #F2F7F8;">InÃ­cio</a>
+      <a href="servicos.dc.html" style="color: #B8CBD1; font-weight: 500; font-size: 15px;" style-hover="color: #F2F7F8;">ServiÃ§os</a>
+      <div class="nav-dd">
+        <span class="nav-dd-label" style="color: #B8CBD1; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 5px; cursor: pointer;">Setores <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></span>
+        <div class="nav-dd-menu">
+          <div style="background: #0B2530; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 8px; min-width: 235px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); display: flex; flex-direction: column;">
+            <a href="nicho.dc.html?n=restaurantes" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Restaurantes</a>
+            <a href="nicho.dc.html?n=clinicas-dentarias" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">ClÃ­nicas DentÃ¡rias</a>
+            <a href="nicho.dc.html?n=ginasios" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">GinÃ¡sios</a>
+            <a href="nicho.dc.html?n=saloes" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">SalÃµes de Cabeleireiro</a>
+            <a href="nicho.dc.html?n=estudios-beleza" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">EstÃºdios de Beleza</a>
+            <a href="nicho.dc.html?n=spas" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Spas</a>
+            <a href="nicho.dc.html?n=veterinarios" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">ClÃ­nicas VeterinÃ¡rias</a>
+            <a href="nicho.dc.html?n=escolas-conducao" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Escolas de ConduÃ§Ã£o</a>
+            <a href="nicho.dc.html?n=fisioterapia" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Fisioterapia</a>
+            <a href="nicho.dc.html?n=hoteis" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Pequenos HotÃ©is e AL</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-dd">
+        <span class="nav-dd-label" style="color: #B8CBD1; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 5px; cursor: pointer;">Plataformas <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></span>
+        <div class="nav-dd-menu">
+          <div style="background: #0B2530; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 8px; min-width: 430px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); display: grid; grid-template-columns: 1fr 1fr; gap: 2px;">
+            <a href="plataforma.dc.html?p=gmb" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Google Maps</a>
+            <a href="plataforma.dc.html?p=google-reviews" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Google Reviews</a>
+            <a href="plataforma.dc.html?p=tripadvisor" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Tripadvisor</a>
+            <a href="plataforma.dc.html?p=booking" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Booking.com</a>
+            <a href="plataforma.dc.html?p=thefork" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">TheFork</a>
+            <a href="plataforma.dc.html?p=airbnb" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Airbnb</a>
+            <a href="plataforma.dc.html?p=vrbo" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Vrbo</a>
+            <a href="plataforma.dc.html?p=yelp" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Yelp</a>
+            <a href="plataforma.dc.html?p=facebook" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Facebook</a>
+            <a href="plataforma.dc.html?p=instagram" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Instagram</a>
+            <a href="plataforma.dc.html?p=linkedin" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">LinkedIn</a>
+            <a href="plataforma.dc.html?p=fresha" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Fresha</a>
+            <a href="plataforma.dc.html?p=treatwell" style="display: block; padding: 9px 14px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #B8CBD1;" style-hover="background: rgba(31,210,165,0.08); color: #F2F7F8;">Treatwell</a>
+          </div>
+        </div>
+      </div>
+      <a href="planos.dc.html" style="color: #B8CBD1; font-weight: 500; font-size: 15px;" style-hover="color: #F2F7F8;">Planos</a>
+      <a href="sobre.dc.html" style="color: #1FD2A5; font-weight: 700; font-size: 15px;">Sobre NÃ³s</a>
+      <a href="contacto.dc.html" style="color: #B8CBD1; font-weight: 500; font-size: 15px;" style-hover="color: #F2F7F8;">Contacto</a>
+      <a href="contacto.dc.html" style="background: #1FD2A5; color: #04211A; font-weight: 700; font-size: 15px; padding: 10px 22px; border-radius: 8px; transition: all 0.3s ease-out;" style-hover="background: #3ADFB6; transform: translateY(-2px);">DiagnÃ³stico Gratuito</a>
+    </div>
+  </nav>
+
+  <!-- ===== HEADER + HISTÃRIA ===== -->
+  <header data-screen-label="Sobre Header" style="padding: 160px 48px 72px; background: linear-gradient(180deg, #0B2530 0%, #071A22 100%);">
+    <div style="max-width: 760px; margin: 0 auto;">
+      <div style="color: #1FD2A5; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px;">Sobre nÃ³s</div>
+      <h1 style="font-family: 'Sora', sans-serif; font-size: 44px; font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; margin: 0 0 28px; color: #F2F7F8; text-wrap: pretty;">Existimos porque os melhores negÃ³cios locais nem sempre sÃ£o os mais encontrados.</h1>
+      <div style="display: flex; flex-direction: column; gap: 18px; font-size: 17px; line-height: 1.7; color: #B8CBD1;">
+        <p style="margin: 0;">A ProspectaIA nasceu de uma constataÃ§Ã£o simples: em Portugal, hÃ¡ restaurantes excelentes com meia sala vazia, clÃ­nicas de referÃªncia com agenda por preencher e ginÃ¡sios de qualidade que ninguÃ©m encontra no Google. NÃ£o por falta de mÃ©rito â por falta de presenÃ§a digital.</p>
+        <p style="margin: 0;">Enquanto isso, negÃ³cios medianos com um perfil Google bem trabalhado ficam com os clientes. Decidimos corrigir essa injustiÃ§a.</p>
+        <p style="margin: 0;">A nossa missÃ£o Ã© dar aos negÃ³cios locais portugueses as mesmas armas digitais das grandes cadeias â sem jargÃ£o, sem contratos armadilhados e sem promessas mÃ¡gicas. Apenas trabalho consistente, medido todos os meses.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== VALORES ===== -->
+  <section data-screen-label="Valores" style="padding: 88px 48px; background: #0B2530;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <h2 data-reveal style="font-family: 'Sora', sans-serif; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 40px; color: #F2F7F8;">Os valores que nos guiam</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <div data-reveal style="background: #0F2E3B; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 32px 28px;">
+          <div style="font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 700; color: #1FD2A5; margin-bottom: 12px;">TransparÃªncia total</div>
+          <p style="font-size: 15px; line-height: 1.6; color: #B8CBD1; margin: 0;">RelatÃ³rios claros, sem jargÃ£o. Sabe sempre o que fazemos, porquÃª e com que resultado.</p>
+        </div>
+        <div data-reveal style="background: #0F2E3B; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 32px 28px;">
+          <div style="font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 700; color: #1FD2A5; margin-bottom: 12px;">Proximidade real</div>
+          <p style="font-size: 15px; line-height: 1.6; color: #B8CBD1; margin: 0;">Poucos clientes de cada vez, acompanhamento prÃ³ximo. Conhecemos o seu negÃ³cio pelo nome, nÃ£o por um nÃºmero.</p>
+        </div>
+        <div data-reveal style="background: #0F2E3B; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 32px 28px;">
+          <div style="font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 700; color: #1FD2A5; margin-bottom: 12px;">Resultados, nÃ£o promessas</div>
+          <p style="font-size: 15px; line-height: 1.6; color: #B8CBD1; margin: 0;">Sem fÃ³rmulas mÃ¡gicas nem garantias vazias. MÃ©tricas concretas, mÃªs apÃ³s mÃªs â e liberdade para sair quando quiser.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MÃTODO ===== -->
+  <section data-screen-label="MÃ©todo" style="padding: 88px 48px;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <h2 data-reveal style="font-family: 'Sora', sans-serif; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 12px; color: #F2F7F8; text-align: center;">Como trabalhamos</h2>
+      <p data-reveal style="font-size: 17px; color: #8FA8B0; margin: 0 0 48px; text-align: center;">Um mÃ©todo simples em trÃªs passos â repetido e afinado todos os meses.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <div data-reveal style="position: relative; background: #0F2E3B; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 40px 28px 32px;">
+          <div style="position: absolute; top: -18px; left: 28px; width: 40px; height: 40px; border-radius: 10px; background: #1FD2A5; color: #04211A; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 800; font-size: 17px;">1</div>
+          <div style="font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 700; color: #F2F7F8; margin-bottom: 12px;">DiagnÃ³stico</div>
+          <p style="font-size: 15px; line-height: 1.6; color: #B8CBD1; margin: 0;">Analisamos gratuitamente a sua presenÃ§a digital: perfil Google, avaliaÃ§Ãµes, plataformas de reservas e concorrÃªncia direta.</p>
+        </div>
+        <div data-reveal style="position: relative; background: #0F2E3B; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 40px 28px 32px;">
+          <div style="position: absolute; top: -18px; left: 28px; width: 40px; height: 40px; border-radius: 10px; background: #1FD2A5; color: #04211A; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 800; font-size: 17px;">2</div>
+          <div style="font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 700; color: #F2F7F8; margin-bottom: 12px;">OtimizaÃ§Ã£o</div>
+          <p style="font-size: 15px; line-height: 1.6; color: #B8CBD1; margin: 0;">Corrigimos e otimizamos tudo o que trava clientes: perfil, fotos, avaliaÃ§Ãµes, reservas. Trabalho contÃ­nuo, nÃ£o pontual.</p>
+        </div>
+        <div data-reveal style="position: relative; background: #0F2E3B; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 40px 28px 32px;">
+          <div style="position: absolute; top: -18px; left: 28px; width: 40px; height: 40px; border-radius: 10px; background: #1FD2A5; color: #04211A; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 800; font-size: 17px;">3</div>
+          <div style="font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 700; color: #F2F7F8; margin-bottom: 12px;">Crescimento</div>
+          <p style="font-size: 15px; line-height: 1.6; color: #B8CBD1; margin: 0;">Medimos, reportamos e ajustamos todos os meses. Mais visibilidade, mais avaliaÃ§Ãµes, mais reservas â de forma sustentada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section data-screen-label="CTA" style="padding: 88px 48px; background: linear-gradient(135deg, #0B2530 0%, #0F3A38 100%);">
+    <div data-reveal style="max-width: 780px; margin: 0 auto; text-align: center;">
+      <h2 style="font-family: 'Sora', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.015em; margin: 0 0 12px; color: #F2F7F8;">Vamos conhecer o seu negÃ³cio?</h2>
+      <p style="font-size: 17px; color: #B8CBD1; margin: 0 0 30px;">O primeiro passo Ã© um diagnÃ³stico gratuito e sem compromisso.</p>
+      <a href="contacto.dc.html" style="background: #1FD2A5; color: #04211A; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; padding: 15px 30px; border-radius: 10px; display: inline-block; transition: all 0.3s ease-out;" style-hover="background: #3ADFB6; transform: translateY(-3px);">Pedir DiagnÃ³stico Gratuito</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background: #05141B; padding: 64px 48px 32px; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; margin-bottom: 48px;">
+        <div>
+          <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 20px; color: #F2F7F8; margin-bottom: 14px;">Prospecta<span style="margin-left: 0.02em;">IA</span></div>
+          <p style="font-size: 14px; line-height: 1.6; color: #7E97A0; margin: 0; max-width: 300px;">OtimizaÃ§Ã£o da presenÃ§a digital de negÃ³cios locais em Portugal. Mais visibilidade, mais avaliaÃ§Ãµes, mais reservas.</p>
+        </div>
+        <div>
+          <div style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; color: #F2F7F8; margin-bottom: 16px;">NavegaÃ§Ã£o</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="inicio.dc.html" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">InÃ­cio</a>
+            <a href="servicos.dc.html" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">ServiÃ§os</a>
+            <a href="planos.dc.html" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">Planos</a>
+            <a href="sobre.dc.html" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">Sobre NÃ³s</a>
+            <a href="contacto.dc.html" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">Contacto</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; color: #F2F7F8; margin-bottom: 16px;">Contacto direto</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="mailto:contacto@prospectaia.pt" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">contacto@prospectaia.pt</a>
+            <a href="https://wa.me/351937158315" style="color: #7E97A0; font-size: 14px;" style-hover="color: #1FD2A5;">+351 937 158 315 (WhatsApp)</a>
+            <span style="color: #7E97A0; font-size: 14px;">SegâSex, 9h00 â 18h00</span>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #5A7078;">
+        <span>Â© 2026 ProspectaIA. Todos os direitos reservados.</span>
+        <div style="display: flex; flex-wrap: wrap; gap: 18px;">
+          <a href="legal.dc.html?s=privacidade" style="color: #5A7078; font-size: 13px;" style-hover="color: #1FD2A5;">PolÃ­tica de Privacidade</a>
+          <a href="legal.dc.html?s=cookies" style="color: #5A7078; font-size: 13px;" style-hover="color: #1FD2A5;">Cookies</a>
+          <a href="legal.dc.html?s=termos" style="color: #5A7078; font-size: 13px;" style-hover="color: #1FD2A5;">Termos e CondiÃ§Ãµes</a>
+          <a href="legal.dc.html?s=aviso" style="color: #5A7078; font-size: 13px;" style-hover="color: #1FD2A5;">Aviso Legal</a>
+          <a href="https://www.livroreclamacoes.pt" style="color: #5A7078; font-size: 13px;" style-hover="color: #1FD2A5;">Livro de ReclamaÃ§Ãµes</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== WHATSAPP FLUTUANTE ===== -->
+  <a href="https://wa.me/351937158315" style="position: fixed; bottom: 24px; right: 24px; z-index: 200; display: flex; align-items: center; gap: 10px; background: #25D366; color: #06301B; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px; padding: 13px 22px; border-radius: 999px; box-shadow: 0 10px 30px rgba(37,211,102,0.35); transition: all 0.3s ease-out;" style-hover="transform: translateY(-3px); box-shadow: 0 16px 40px rgba(37,211,102,0.5);">
+    <span style="width: 9px; height: 9px; border-radius: 50%; background: #06301B;"></span>
+    WhatsApp
+  </a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const els = document.querySelectorAll('[data-reveal]');
+    els.forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(28px)';
+      el.style.transition = 'opacity 0.55s ease-out, transform 0.55s ease-out';
+    });
+    this._obs = new IntersectionObserver((entries) => {
+      entries.forEach((en, idx) => {
+        if (en.isIntersecting) {
+          setTimeout(() => {
+            en.target.style.opacity = '1';
+            en.target.style.transform = 'translateY(0)';
+          }, idx * 90);
+          this._obs.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach((el) => this._obs.observe(el));
+  }
+  componentWillUnmount() { if (this._obs) this._obs.disconnect(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
