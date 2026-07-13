@@ -1,0 +1,8 @@
+{
+  "name": "prospectaia-website",
+  "private": true,
+  "description": "Static site for ProspectaIA (client-hydrated .dc.html pages, no build step).",
+  "scripts": {
+    "check:encoding": "node scripts/check-encoding.js"
+  }
+}

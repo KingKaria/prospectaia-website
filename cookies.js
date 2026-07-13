@@ -1,4 +1,4 @@
-// ProspectaIA â banner de consentimento de cookies (RGPD)
+// ProspectaIA — banner de consentimento de cookies (RGPD)
 (function () {
   var KEY = 'pia-cookies';
   function el(tag, css, html) {
@@ -16,12 +16,12 @@
 
     var title = el('div', "font-family:Sora,sans-serif;font-weight:700;font-size:16px;margin-bottom:8px;color:#F2F7F8;", 'Este site usa cookies');
     var txt = el('p', 'font-size:13.5px;line-height:1.55;color:#B8CBD1;margin:0 0 16px;',
-      'Usamos cookies essenciais para o funcionamento do site e, com o seu consentimento, cookies de anÃ¡lise para melhorar a sua experiÃªncia. Saiba mais na nossa <a href="legal.dc.html?s=cookies" style="color:#1FD2A5;text-decoration:none;">PolÃ­tica de Cookies</a>.');
+      'Usamos cookies essenciais para o funcionamento do site e, com o seu consentimento, cookies de análise para melhorar a sua experiência. Saiba mais na nossa <a href="legal.dc.html?s=cookies" style="color:#1FD2A5;text-decoration:none;">Política de Cookies</a>.');
 
     var prefs = el('div', 'display:none;margin:0 0 16px;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px;');
     prefs.innerHTML =
-      '<label style="display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13.5px;color:#B8CBD1;margin-bottom:10px;">Essenciais (obrigatÃ³rios)<input type="checkbox" checked disabled></label>' +
-      '<label style="display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13.5px;color:#B8CBD1;cursor:pointer;">AnÃ¡lise e estatÃ­sticas<input id="pia-ck-analytics" type="checkbox" style="cursor:pointer;"></label>';
+      '<label style="display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13.5px;color:#B8CBD1;margin-bottom:10px;">Essenciais (obrigatórios)<input type="checkbox" checked disabled></label>' +
+      '<label style="display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13.5px;color:#B8CBD1;cursor:pointer;">Análise e estatísticas<input id="pia-ck-analytics" type="checkbox" style="cursor:pointer;"></label>';
 
     var row = el('div', 'display:flex;flex-wrap:wrap;gap:10px;align-items:center;');
     var btn = function (label, primary) {
@@ -36,8 +36,8 @@
     var accept = btn('Aceitar', true);
     var reject = btn('Rejeitar', false);
     var pref = el('button', 'background:none;border:none;color:#7E97A0;font-family:Manrope,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-decoration:underline;padding:0;');
-    pref.textContent = 'PreferÃªncias';
-    var save = btn('Guardar preferÃªncias', true);
+    pref.textContent = 'Preferências';
+    var save = btn('Guardar preferências', true);
     save.style.display = 'none';
 
     function close(value) {

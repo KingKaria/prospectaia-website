@@ -21,6 +21,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Check for encoding regressions (mojibake)
+        run: node scripts/check-encoding.js
+
       - name: Prepare deploy folder
         run: |
           mkdir -p _site
