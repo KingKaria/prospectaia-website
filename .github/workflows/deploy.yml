@@ -28,6 +28,7 @@ jobs:
         run: |
           mkdir -p _site
           cp *.html _site/
+          cp 404.dc.html _site/404.html
           cp support.js _site/
           cp cookies.js _site/
           cp CNAME _site/
